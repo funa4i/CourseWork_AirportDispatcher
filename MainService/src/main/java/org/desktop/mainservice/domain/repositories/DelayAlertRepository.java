@@ -1,0 +1,12 @@
+package org.desktop.mainservice.domain.repositories;
+
+import org.desktop.mainservice.domain.entities.DelayAlert;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface DelayAlertRepository extends JpaRepository<DelayAlert, Integer> {
+
+    List<DelayAlert> findByFlightId(Integer flightId);
+
+    List<DelayAlert> findByDelayMinutesGreaterThan(Integer minutes);
+}
