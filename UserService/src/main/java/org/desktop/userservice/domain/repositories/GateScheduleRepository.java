@@ -1,0 +1,14 @@
+package org.desktop.userservice.domain.repositories;
+
+import org.desktop.userservice.domain.entity.GateSchedule;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+public interface GateScheduleRepository extends JpaRepository<GateSchedule, Integer> {
+
+    List<GateSchedule> findByGateId(Integer gateId);
+
+    List<GateSchedule> findByStartDateBetween(LocalDateTime start, LocalDateTime end);
+}
