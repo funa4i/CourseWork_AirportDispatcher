@@ -9,14 +9,8 @@ import java.time.LocalDateTime;
 
 @Data
 public class FlightBinding {
-    private Integer id;
-
     @NotNull
     private Integer routeId;
-
-    @NotBlank
-    @Size(max = 10)
-    private String flightNumber;
 
     @NotNull
     private LocalDateTime scheduledDeparture;

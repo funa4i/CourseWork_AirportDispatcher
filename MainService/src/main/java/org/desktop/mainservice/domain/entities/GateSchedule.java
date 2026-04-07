@@ -18,7 +18,7 @@ public class GateSchedule {
     @JoinColumn(name = "gate_id", nullable = false)
     private Gate gate;
 
-    @ManyToOne(optional = false)
+    @OneToOne(optional = false)
     @JoinColumn(name = "flight_id", nullable = false)
     private Flight flight;
 

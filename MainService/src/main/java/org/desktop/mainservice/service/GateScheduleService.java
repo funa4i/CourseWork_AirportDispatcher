@@ -1,5 +1,13 @@
 package org.desktop.mainservice.service;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import org.desktop.mainservice.domain.entities.GateSchedule;
+import org.desktop.mainservice.domain.repositories.GateScheduleRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Log4j2
 @Service
 @RequiredArgsConstructor
@@ -22,7 +30,7 @@ public class GateScheduleService {
         return null;
     }
 
-    public GateSchedule update(Integer id, GateSchedule entity) {
+    public GateSchedule update( GateSchedule entity) {
         log.info("update GateSchedule");
         return null;
     }

@@ -2,6 +2,7 @@ package org.desktop.mainservice.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.desktop.mainservice.domain.enums.Status;
 
 import java.time.LocalDateTime;
 
@@ -20,6 +21,13 @@ public class Flight {
 
     @Column(name = "flight_number", nullable = false, length = 10, unique = true)
     private String flightNumber;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status;
+
+    @OneToOne(optional = false, mappedBy = "flight")
+    private GateSchedule gate;
 
     @Column(name = "scheduled_departure", nullable = false)
     private LocalDateTime scheduledDeparture;
