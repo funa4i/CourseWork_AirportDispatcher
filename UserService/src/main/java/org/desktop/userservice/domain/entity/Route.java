@@ -1,14 +1,11 @@
 package org.desktop.userservice.domain.entity;
 
 import jakarta.persistence.*;
+import org.desktop.userservice.domain.enums.FlyType;
 
 @Entity
 @Table(name = "route")
 public class Route {
-
-    public enum FlyType {
-        arrival, departure
-    }
 
     @Id
     private Integer id;

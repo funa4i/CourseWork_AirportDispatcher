@@ -14,28 +14,9 @@ import java.util.List;
 public class EmailStatisticService {
 
     private final EmailStatisticRepository repository;
+    private final UserService userService;
 
-    public EmailStatistic create(EmailStatistic entity) {
-        log.info("create EmailStatistic");
-        return null;
-    }
+    public void increaseScheduleEmailCount(Integer UserId) {
 
-    public EmailStatistic getById(Integer id) {
-        log.info("get EmailStatistic by id");
-        return null;
-    }
-
-    public List<EmailStatistic> getAll() {
-        log.info("get all EmailStatistics");
-        return null;
-    }
-
-    public EmailStatistic update(Integer id, EmailStatistic entity) {
-        log.info("update EmailStatistic");
-        return null;
-    }
-
-    public void delete(Integer id) {
-        log.info("delete EmailStatistic");
     }
 }

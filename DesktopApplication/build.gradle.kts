@@ -6,7 +6,7 @@ plugins {
 
 group = "org.desktop"
 version = "0.0.1-SNAPSHOT"
-description = "EmailService"
+description = "DesktopApplication"
 
 java {
     toolchain {
@@ -21,15 +21,16 @@ repositories {
 extra["springCloudVersion"] = "2025.1.1"
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-mail")
-    implementation("org.projectlombok:lombok")
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+    testImplementation("org.springframework.boot:spring-boot-starter-validation-test")
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
+    testCompileOnly("org.projectlombok:lombok")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    implementation("org.apache.poi:poi-ooxml-full:5.5.1")
-    implementation("org.apache.poi:poi-ooxml:5.5.1")
+    testAnnotationProcessor("org.projectlombok:lombok")
 }
 
 dependencyManagement {

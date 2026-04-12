@@ -4,7 +4,7 @@ import org.desktop.mainservice.domain.dto.binding.UserBinding;
 import org.desktop.mainservice.domain.dto.view.UserView;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.springframework.security.core.userdetails.User;
+import org.desktop.mainservice.domain.entities.User;
 
 import java.util.List;
 

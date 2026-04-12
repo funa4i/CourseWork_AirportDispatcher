@@ -1,4 +1,4 @@
-package org.desktop.mainservice.domain.dto.view;
+package org.desktop.emailservice.feign.dto;
 
 import lombok.Data;
 

@@ -1,8 +1,8 @@
 package org.desktop.mainservice.config;
 
-import com.example.coursework.security.JwtReqFilter;
-import com.example.coursework.services.UserServ;
 import lombok.RequiredArgsConstructor;
+import org.desktop.mainservice.security.JwtReqFilter;
+import org.desktop.mainservice.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -31,7 +31,7 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @EnableAsync
 public class SecureConfig {
 
-    private final UserServ userServ;
+    private final UserService userServ;
 
     private final JwtReqFilter jwtReqFilter;
 
@@ -64,10 +64,11 @@ public class SecureConfig {
 
     @Bean
     public AuthenticationProvider authenticationProvider(PasswordEncoder passwordEncoder) {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userServ);
-        authProvider.setPasswordEncoder(passwordEncoder);
-        return authProvider;
+//        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+//        authProvider.setUserDetailsService(userServ);
+//        authProvider.setPasswordEncoder(passwordEncoder);
+//        return authProvider;
+        return null;
     }
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config)

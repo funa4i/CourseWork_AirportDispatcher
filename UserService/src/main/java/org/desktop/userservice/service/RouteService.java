@@ -3,6 +3,7 @@ package org.desktop.userservice.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.desktop.userservice.domain.entity.Route;
+import org.desktop.userservice.domain.enums.FlyType;
 import org.desktop.userservice.domain.repositories.RouteRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,7 +38,7 @@ public class RouteService {
         return repository.findByAircraftId(aircraftId);
     }
 
-    public List<Route> getByFlyType(Route.FlyType flyType) {
+    public List<Route> getByFlyType(FlyType flyType) {
         log.info("get Routes by flyType");
         return repository.findByFlyType(flyType);
     }
