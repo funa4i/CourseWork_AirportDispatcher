@@ -1,16 +1,15 @@
-# React + Vite
+# Shared layer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Базовый инфраструктурный слой для React-приложения.
 
-Currently, two official plugins are available:
+Содержимое:
+- `src/shared/api/http-client.ts` — общий axios-клиент
+- `src/shared/api/types.ts` — общие типы API, пагинации и ошибок
+- `src/shared/lib/query.ts` — утилиты для react-query и фильтров
+- `src/shared/lib/date.ts` — форматирование дат
+- `src/shared/lib/dictionary.ts` — отображение enum/словарей
+- `src/shared/index.ts` — barrel export
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Замечание:
+В `query.ts` используются alias-импорты вида `@/shared/...`.
+Для Vite/TS нужно настроить path alias `@ -> src`.
